@@ -1,0 +1,311 @@
+<!--GDG DEVFEST 2k17-->
+<!--Created on 17/10/17 19:15:09-->
+<!--Created By:-->
+<!--Sarthak Sehgal [sarthaki.esw@gmail.com]-->
+<!--Parth Arora [iampartharora@gmail.com]-->
+<!--Harshul Singhal [harshulsinghal@yahoo.com]-->
+<html>
+    <head>
+        <title>GDG DevFest-2K17</title>
+		<link rel="icon" href="../resources/icon.png" type="image/png">
+        <!-- Load the Firebase library before loading the body. -->
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+        <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+        <!--<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+        <!-- <link rel="stylesheet" href="../css/bootstrap-iso.css"> -->
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../js/Frame2.js"></script>
+        <script src="../js/newfire.js"></script>
+        <!-- <audio  loop preload>
+          <source src="../resources/Theme_Song.mp3" type="audio/mpeg">
+        </audio> -->
+        <script>
+               $(document).ready(function(){
+                    $('#M1').modal();
+                    $('#M2').modal();
+                    $('#M4').modal();
+                    $(".button-collapse").sideNav();
+                    $('.carousel').carousel();
+                    $('#M3').hide();
+               });
+				$(document).keyup(function(e) {
+               if (e.keyCode == 27 && menuFlag) {
+                    reboot();
+              }
+				});
+
+
+        </script>
+
+   </head>
+
+   <body onload="init();" style="overflow-x: hidden; margin:0px">
+
+	   <div id="load">
+      <img src="../resources/load.gif" width="100%" height="100%" style="padding:0px !important; border:0px !important;">
+   </div>
+	   <div style="position:absolute; left:40%;top:80%">
+        <a href="" class="waves-effect waves-light btn btn-large" id="frbut">Fast Registration</a>
+   </div>
+	   <!-- main container contains frame. frames move along with container. -->
+   <div id="mymain_container" style="top:50px; left:20px;">
+        <div class="myframe canvasContainer" style=" z-index:0;position:absolute; top:0px; align-items: center;display: flex;flex-direction: column;justify-content: space-around;width:100%;height:100%;" id="frame_1">
+             <canvas id="intro1" style="border:#666 1px solid; width:inherit; height:inherit;z-index:-1;"></canvas>
+        </div>
+   </div>
+
+     <nav style="background-color:rgba(6,0,5,0.75); position:absolute; top:0px;">
+		 <div class="nav-wrapper">
+			 <img src="../resources/logo-gdg.png" class="brand-logo left" style="margin-left:30px; border:none !important; background-color:transparent !important;">
+               <a href="#!" class="brand-logo left" style="margin-left:80px">GDG Devfest 2K17</a>
+               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+               <ul class="right hide-on-med-and-down" >
+                    <li class="navlink" onclick="initiateJump(1)"><a href="#!">TechTalk</a></li>
+                    <li class="navlink" onclick="initiateJump(2)"><a href="#!">Hackathon</a></li>
+                    <li class="navlink" onclick="initiateJump(3)"><a href="#!">Past Events</a></li>
+                    <li class="navlink" onclick="initiateJump(4)"><a href="#!">Sponsors</a></li>
+                    <li class="navlink" onclick="initiateJump(5)"><a href="#!">About Us</a></li>
+               </ul>
+               <ul class="side-nav" id="mobile-demo" style="z-index:1000 !important;">
+				   <li><a href="#!"><b>DevFest-2K17</b></a></li>
+                         <hr>
+                    <li  onclick="initiateJump(1)"><a href="#!">TechTalk</a></li>
+                    <li  onclick="initiateJump(2)"><a href="#!">Hackathon</a></li>
+                    <li  onclick="initiateJump(3)"><a href="#!">Past Events</a></li>
+                    <li  onclick="initiateJump(4)"><a href="#!">Sponsors</a></li>
+                    <li  onclick="initiateJump(5)"><a href="#!">About Us</a></li>
+               </ul>
+          </div>
+     </nav>
+     <!-- menu items -->
+     <div id="M1" class="modal modal-fixed-footer">
+          <div class="modal-content">
+               <h4>TECHTALK</h4>
+                    <div class="row">
+                         <div class="col s10"><b>
+                              <p>Date  : 11th November 2017 </p>
+                              <p>Venue : LT-5 , Jaypee Institute of Information Technology,Sector 62,Noida</p></b>
+                         </div>
+
+                    </div>
+
+                    <div class="row">
+                         <div class="col s2"><img class="responsive-img circle" src="../resources/sanya.jpg"></div>
+                         <div class="col s10">
+                              <p><b>Sanya Khurana</b> is a Software Developer at Adobe Systems, India. She is also the Founder and Chapter Leader of Lean In India - a community of 66 Lean In Circles and 1700 members that empowers women towards their ambitions. She is a post-graduate and also interned in Adobe and IBM. She is a proud recipient of Google Women Techmakers Scholarship 2016, Facebook Grace Hopper Conference Scholarship 2016 and Grace Hopper Conference India Scholarship 2015. She has created Android/iOS Mobile Application, has been an open source contributor and also mentored at Learn-IT Girl.</p>
+                              <p>She will talk about Starting Lean In Circles, about all the scholarships in tech, and her journey in the CS field being a non-btech student, how she overcame her self doubts and fears along the way.</p>
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="col s10">
+                              <p><b>Diksha Deo</b>, a IOT enthusiast and full stack developer working primarily in Python and node.js. She is a constant contributor to WomenWhoCode, HeadStart, Google WomenTechMaker as a Speaker, Lead and Member. She readily takes any opportunity which caters her vision of helping people. She shares the belief that things you own shouldn't own you, that you should be free to change and make them truly yours. Her endless curiosity and enthusiasm to learn how everything works makes Diksha a "pro" in uniting digital and physical worlds. Co-Founder and Director at Ckho, Founder and CEO at Incubsence.
+                              </p>
+                         </div>
+                         <div class="col s2"><img class="responsive-img circle" src="../resources/diksha.jpg"></div>
+
+                    </div>
+                    <hr>
+                    <div class="row">
+                         <div class="col s9 offset-s3"><h3>Registration Form</h3></div>
+                         <div class="col s12">
+                              <p style="color:red";>*Only required for <b>external participants</b></p>
+                         </div>
+                    </div>
+
+                    <div class="row">
+                         <form class="col s12" >
+                              <div class="row">
+                              <div class="input-field col s12">
+                              <input id="name" type="text" class="validate" pattern="[A-Z a-z]+" required>
+                              <label for="name" data-error="wrong" data-success="right">Full Name</label>
+                              </div>
+                              </div>
+                              <!-- ================= -->
+                              <div class="row">
+                              <div class="input-field col s12">
+                              <input id="email" type="email" class="validate" required>
+                              <label for="email" data-error="wrong" data-success="right">Email</label>
+                              </div>
+                              </div>
+                              <!-- ====================== -->
+                              <div class="row">
+                              <div class="input-field col s12">
+                              <input id="phonenumber" type="text" class="validate" pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}"  required>
+                              <label for="phonenumber" data-error="wrong" data-success="right">Contact Number</label>
+                              </div>
+                              </div>
+                              <!-- ====================== -->
+                              <div class="row">
+                              <div class="input-field col s12">
+                              <input id="githublink" type="url" class="validate">
+                              <label for="githublink" data-error="wrong" data-success="right">Github Profile (optional)</label>
+                              </div>
+                              </div>
+                              <!-- ====================== -->
+                              <div class="row">
+                              <div class="input-field col s2 offSet-s5">
+                                   <button class="btn waves-effect waves-light but" type="submit" onclick="submitentry()">Submit
+                      </button>
+                           <div class="suc" style="display:none"><h5>Success!<h5></div>
+                           <div class="fai" style="display:none"><h5>Failed!<h5></div>
+                              </div>
+                              </div>
+                              <!-- ====================== -->
+                        </form>
+                    </div>
+
+          </div>
+          <div class="modal-footer">
+               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" onclick="reboot()">Close</a>
+          </div>
+     </div>
+
+     <div id="M2" class="modal modal-fixed-footer">
+          <div class="modal-content">
+               <h4>HACKATHON</h4>
+               <div class="row">
+                    <div class="col s10"><b>
+                         <p>Date  : 12th November 2017 </p>
+                         <p>Venue : CL1/CL2/CL3/CL4 <br>Jaypee Institute of Information Technology,Sector 62,Noida</p></b>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col s12">
+                         <p>It's a <b>12-hr Hackathon</b>. <br><b>Any Software Technology is allowed</b>, be it Android, Web, Machine Learning or any other!</p>
+                         <p> Put yourself into the Developer mindset and prime your brain for thinking creatively, efficiently, and adaptively. What's that mean? Some things are better communicated via GIF.</p>
+                    </div>
+                    <div class="col s6 offset-s3" id="sponge">
+                         <!--<img src="../resources/spo.gif" width:"320" height:"213">-->
+                         <p><b>&nbsp;&nbsp;So get ready to put your imagination to work!</b></p>
+                    </div>
+				   <div class="col s12">
+                        <p>The sun might go down , the passion of coders shouldn't. For this passion to sustain, you all will be fueled by<B> GDG swags and free food!</B></p>
+                    </div>
+
+               </div>
+
+
+                    <hr>
+                    <div class="row">
+                         <div class="col s9 offset-s3"><h3>Registration Form</h3></div>
+						 <div class="col s12">
+                              <p style="color:red;">*Required for <b>Everyone</b></p>
+                         </div>
+                    </div>
+                    <form class="col s12" >
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="teamname" type="text" class="validate" required>
+                         <label for="teamname" data-error="wrong" data-success="right">Your Team Name</label>
+                         </div>
+                         </div>
+                         <!-- ================= -->
+                         <div class="row">
+                         <div class="input-field col s7">
+                         <input id="nom" type="text" pattern="[1-3]" class="validate" required>
+                         <label for="nom" data-error="wrong" data-success="right">Number of Members (Max 3)</label>
+                         </div>
+                         </div>
+                         <!-- ==================== -->
+                         <div class="row">
+                         <div class="text col s12">
+                              <span><h5>Detail of any 1 Member<h5><span>
+                         </div>
+                         </div>
+                         <!-- ================= -->
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="name2" type="text" class="validate" pattern="[A-Z a-z]+" required>
+                         <label for="name2" data-error="wrong" data-success="right">Full Name</label>
+                         </div>
+                         </div>
+                         <!-- ================= -->
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="email2" type="email" class="validate" required>
+                         <label for="email2" data-error="wrong" data-success="right">Email</label>
+                         </div>
+                         </div>
+                         <!-- ====================== -->
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="phonenumber2" type="text" class="validate" pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}" required>
+                         <label for="phonenumber2" data-error="wrong" data-success="right">Contact Number</label>
+                         </div>
+                         </div>
+                         <!-- ====================== -->
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="githublink2" type="url" class="validate">
+                         <label for="githublink2" data-error="wrong" data-success="right">Github Profile</label>
+                         </div>
+                         </div>
+                         <!-- ====================== -->
+                         <div class="row">
+                         <div class="input-field col s2 offSet-s5">
+                              <button class="btn waves-effect waves-light but" type="submit" onclick="submitentry2()">Submit
+                 </button>
+                      <div class="suc" style="display:none"><h5>Success!<h5></div>
+                      <div class="fai" style="display:none"><h5>Failed!<h5></div>
+                         </div>
+                         </div>
+                         <!-- ====================== -->
+                   </form>
+               </div>
+          <div class="modal-footer">
+               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " onclick="reboot()">Close</a>
+          </div>
+     </div>
+
+     <div id="M3" style="background-color:rgba(6,0,5,0.7); position:absolute; top:0px; width:100%; height:100%; z-index:2; align-items: center;display:flex;justify-content: center;" onclick="reboot()">
+          <div class="carousel" style="width:60%;height:60%; z-index:-1" data-indicators="true" >
+               <a class="carousel-item" href="#one!"><img src="pastevents/1.jpg" style="width:150%;height:150%;" border="5px"></a>
+               <a class="carousel-item" href="#two!"><img src="../pastevents/2.jpg" style="width:150%;height:150%;"></a>
+               <a class="carousel-item" href="#three!"><img src="../pastevents/3.jpg" style="width:150%;height:150%;"></a>
+               <a class="carousel-item" href="#four!"><img src="../pastevents/4.jpg" style="width:150%;height:150%;"></a>
+               <a class="carousel-item" href="#five!"><img src="../pastevents/5.jpg" style="width:150%;height:150%;"></a>
+               <a class="carousel-item" href="#six!"><img src="../pastevents/6.jpg" style="width:150%;height:150%;"></a>
+               <a class="carousel-item" href="#seven!"><img src="../pastevents/7.jpg" style="width:150%;height:150%;"></a>
+               <a class="carousel-item" href="#eight!"><img src="../pastevents/8.jpg" style="width:150%;height:150%;"></a>
+               <a class="carousel-item" href="#nine!"><img src="../pastevents/9.jpg" style="width:150%;height:150%;"></a>
+          </div>
+     </div>
+
+     <div id="M4" class="modal modal-fixed-footer">
+          <div class="modal-content">
+               <h4>GDG NOIDA</h4>
+               <div class="row">
+                    <div class="col s12">
+                         Google Developers' Group, Noida also known as GDG NOIDA, is a platform made for every tech-savvy who needs to quench his thirst for technology, and take him to dizzying heights. Made from a team of high-spirited members, we strive to spread our love for Google and its widespread works.
+                         <B>Reach Us :</B>
+						<pre>
+Nearest metro stations: Kaushambi
+Shared autos at Rs 15 per person.
+Private autos - Rs 80-90
+Vaishali
+Private autos- rs 70-80
+Noida city centre(Wave city centre now)
+Shared autos- Rs 15 per person
+Private autos - Rs 90-100
+landmarks nearBy:
+Expocentre Noida sector 62
+Shipra Mall Indirapuram Ghaziabad
+						</pre>
+                    </div>
+               </div>
+          </div>
+          <div class="modal-footer">
+               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " onclick="reboot()">Close</a>
+          </div>
+     </div>
+
+
+
+    </body>
+</html>

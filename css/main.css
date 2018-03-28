@@ -1,0 +1,35 @@
+#canvasContainer{
+     display: flex;
+}
+
+#intro1{
+
+}
+
+#sidenav-overlay{
+     z-index: 0 !important;
+}
+
+img {
+   padding:2px !important;
+   border:2px solid #0163ff !important;
+   background-color:#000 !important;
+}
+
+.navlink{
+     margin-left: 5px !important;
+     margin-right: 5px !important;
+}
+
+.navlink a{
+     font-size: 2rem !important;
+     padding-left: 25px !important;
+     padding-right: 25px !important;
+}
+
+.navlink a:hover{
+     background-color: rgba(6,0,5,1);
+}
+.navlink a:focus{
+     background-color: rgba(6,0,5,1);
+}

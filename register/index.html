@@ -1,0 +1,223 @@
+<!--====Developed By Harshul Singhal=====================
+========mail:harshulsinghal@yahoo.com =========================-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>GDG DevFest-2K17 Registration</title>
+<link rel="icon" href="../resources/icon.png" type="image/png">
+        <!-- Load the Firebase library before loading the body. -->
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+        <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+		<script src="../js/newfire.js"></script>
+		<script>
+               $(document).ready(function(){
+                    $('#M1').modal();
+                    $('#M2').modal();
+				   $('#B1').click(function(){
+				   	$('#M2').hide();
+					$('#M1').modal('open');
+				   })
+					$('#B2').click(function(){
+				   	$('#M1').hide();
+					$('#M2').modal('open');
+				   })
+				});
+		</script>
+		<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<img src="../resources/hs2.png" class="gdg-logo" type="image/png">
+<div id="side-btn">
+<a class="waves-effect waves-light btn btn-large" id="B2">HACKATHON</a>
+<a class="waves-effect waves-light btn btn-large" id="B1">TECH TALK</a>
+<a class="waves-effect waves-light btn btn-large" href="http://devfest.gdgjiitnoida.in/">PLAY THE GAME</a>
+</div>
+
+
+<div id="M1" class="modal modal-fixed-footer">
+          <div class="modal-content">
+               <h4>TECHTALK REGISTRATION</h4>
+                    <div class="row">
+                         <div class="col s10"><b>
+                              <p>Date  : 11th November 2017 </p>
+                              <p>Venue : LT-5 , Jaypee Institute of Information Technology,Sector 62,Noida</p></b>
+                         </div>
+
+                    </div>
+
+                    <div class="row">
+                         <div class="col s2"><img class="responsive-img circle" src="../resources/sanya.jpg"></div>
+                         <div class="col s10">
+                              <p><b>Sanya Khurana</b> is a Software Developer at Adobe Systems, India. She is also the Founder and Chapter Leader of Lean In India - a community of 66 Lean In Circles and 1700 members that empowers women towards their ambitions. She is a post-graduate and also interned in Adobe and IBM. She is a proud recipient of Google Women Techmakers Scholarship 2016, Facebook Grace Hopper Conference Scholarship 2016 and Grace Hopper Conference India Scholarship 2015. She has created Android/iOS Mobile Application, has been an open source contributor and also mentored at Learn-IT Girl.</p>
+                              <p>She will talk about Starting Lean In Circles, about all the scholarships in tech, and her journey in the CS field being a non-btech student, how she overcame her self doubts and fears along the way.</p>
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="col s10">
+                              <p><b>Diksha Deo</b>, a IOT enthusiast and full stack developer working primarily in Python and node.js. She is a constant contributor to WomenWhoCode, HeadStart, Google WomenTechMaker as a Speaker, Lead and Member. She readily takes any opportunity which caters her vision of helping people. She shares the belief that things you own shouldn't own you, that you should be free to change and make them truly yours. Her endless curiosity and enthusiasm to learn how everything works makes Diksha a "pro" in uniting digital and physical worlds. Co-Founder and Director at Ckho, Founder and CEO at Incubsence.
+                              </p>
+                         </div>
+                         <div class="col s2"><img class="responsive-img circle" src="../resources/diksha.jpg"></div>
+
+                    </div>
+                    <hr>
+                    <div class="row">
+                         <div class="col s9 offset-s3"><h3>Registration Form</h3></div>
+                         <div class="col s12">
+                              <p style="color:red";>*Only required for <b>external participants</b></p>
+                         </div>
+                    </div>
+
+                    <div class="row">
+                         <form class="col s12" >
+                              <div class="row">
+                              <div class="input-field col s12">
+                              <input id="name" type="text" class="validate" pattern="[A-Z a-z]+" required>
+                              <label for="name" data-error="wrong" data-success="right">Full Name</label>
+                              </div>
+                              </div>
+                              <!-- ================= -->
+                              <div class="row">
+                              <div class="input-field col s12">
+                              <input id="email" type="email" class="validate" required>
+                              <label for="email" data-error="wrong" data-success="right">Email</label>
+                              </div>
+                              </div>
+                              <!-- ====================== -->
+                              <div class="row">
+                              <div class="input-field col s12">
+                              <input id="phonenumber" type="text" class="validate" pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}"  required>
+                              <label for="phonenumber" data-error="wrong" data-success="right">Contact Number</label>
+                              </div>
+                              </div>
+                              <!-- ====================== -->
+                              <div class="row">
+                              <div class="input-field col s12">
+                              <input id="githublink" type="url" class="validate">
+                              <label for="githublink" data-error="wrong" data-success="right">Github Profile (optional)</label>
+                              </div>
+                              </div>
+                              <!-- ====================== -->
+                              <div class="row">
+                              <div class="input-field col s2 offSet-s5">
+                                   <button class="btn waves-effect waves-light but" type="submit" onclick="submitentry()">Submit
+                      </button>
+                           <div class="suc" style="display:none"><h5>Success!</h5></div>
+                           <div class="fai" style="display:none"><h5>Failed!</h5></div>
+                              </div>
+                              </div>
+                              <!-- ====================== -->
+                        </form>
+                    </div>
+
+          </div>
+          <div class="modal-footer">
+               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+     </div>
+
+     <div id="M2" class="modal modal-fixed-footer">
+          <div class="modal-content">
+               <h4>HACKATHON REGISTRATION</h4>
+               <div class="row">
+                    <div class="col s10"><b>
+                         <p>Date  : 12th November 2017 </p>
+                         <p>Venue : CL1/CL2/CL3/CL4 <br>Jaypee Institute of Information Technology,Sector 62,Noida</p></b>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col s12">
+                         <p>It's a <b>12-hr Hackathon</b>. <br><b>Any Software Technology is allowed</b>, be it Android, Web, Machine Learning or any other!</p>
+                    </div>
+               </div>
+
+
+                    <hr>
+                    <div class="row">
+                         <div class="col s9 offset-s3"><h3>Registration Form</h3></div>
+						 <div class="col s12">
+                              <p style="color:red;">*Required for <b>Everyone</b></p>
+                         </div>
+                    </div>
+                    <form class="col s12" >
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="teamname" type="text" class="validate" required>
+                         <label for="teamname" data-error="wrong" data-success="right">Your Team Name</label>
+                         </div>
+                         </div>
+                         <!-- ================= -->
+                         <div class="row">
+                         <div class="input-field col s7">
+                         <input id="nom" type="text" pattern="[1-3]" class="validate" required>
+                         <label for="nom" data-error="wrong" data-success="right">Number of Members (Max 3)</label>
+                         </div>
+                         </div>
+                         <!-- ==================== -->
+                         <div class="row">
+                         <div class="text col s12">
+                              <span><h5>Detail of any 1 Member<h5><span>
+                         </div>
+                         </div>
+                         <!-- ================= -->
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="name2" type="text" class="validate" pattern="[A-Z a-z]+" required>
+                         <label for="name2" data-error="wrong" data-success="right">Full Name</label>
+                         </div>
+                         </div>
+                         <!-- ================= -->
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="email2" type="email" class="validate" required>
+                         <label for="email2" data-error="wrong" data-success="right">Email</label>
+                         </div>
+                         </div>
+                         <!-- ====================== -->
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="phonenumber2" type="text" class="validate" pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}" required>
+                         <label for="phonenumber2" data-error="wrong" data-success="right">Contact Number</label>
+                         </div>
+                         </div>
+                         <!-- ====================== -->
+                         <div class="row">
+                         <div class="input-field col s12">
+                         <input id="githublink2" type="url" class="validate">
+                         <label for="githublink2" data-error="wrong" data-success="right">Github Profile (optional)</label>
+                         </div>
+                         </div>
+                         <!-- ====================== -->
+                         <div class="row">
+                         <div class="input-field col s2 offSet-s5">
+                              <button class="btn waves-effect waves-light but" type="submit" onclick="submitentry2()">Submit
+                 </button>
+                      <div class="suc" style="display:none"><h5>Success!</h5></div>
+                      <div class="fai" style="display:none"><h5>Failed!</h5></div>
+                         </div>
+                         </div>
+                         <!-- ====================== -->
+                   </form>
+								  <div class="row">
+                    <div class="col s12">
+								  <p> Put yourself into the Developer mindset and prime your brain for thinking creatively, efficiently, and adaptively. What's that mean? Some things are better communicated via GIF.</p>
+                    </div>
+                    <div class="col s6 offset-s3">
+                         <img class="aligncenter size-full wp-image-8050 lazyloaded" src="../resources/spo.gif" data-class="aligncenter size-full wp-image-8050" data-alt="Spongebob's Imagination" data-width="320" data-height="213">
+                         <p><b>&nbsp;&nbsp;So get ready to put your imagination to work!</b></p>
+							 </div>
+							 </div>
+               </div>
+			   <div class="modal-footer">
+               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+          </div>
+     </div>
+     
+</body>
+</html>
